@@ -1,0 +1,14 @@
+dn: cn=Hans Mueller,ou=Users,dc=firma,dc=de
+objectClass: inetOrgPerson
+cn: Hans Mueller
+sn: Mueller
+givenName: Hans
+mail: hans.mueller@example.de
+telephoneNumber: +49 170 1234567
+
+dn: cn=Anna Schmidt,ou=Users,dc=firma,dc=de
+objectClass: inetOrgPerson
+cn: Anna Schmidt
+sn: Schmidt
+givenName: Anna
+mail: anna.schmidt@example.com

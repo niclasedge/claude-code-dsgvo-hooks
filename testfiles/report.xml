@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report>
+  <entry>
+    <mitarbeiter>Hans Mueller</mitarbeiter>
+    <email>hans.mueller@example.de</email>
+    <abteilung>IT</abteilung>
+    <telefon>+49 170 1234567</telefon>
+  </entry>
+  <entry>
+    <mitarbeiter>Anna Schmidt</mitarbeiter>
+    <email>anna.schmidt@example.com</email>
+    <abteilung>HR</abteilung>
+    <telefon>0171-9876543</telefon>
+  </entry>
+</report>

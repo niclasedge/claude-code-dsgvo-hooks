@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git log:*)",
+      "Bash(git pull:*)",
+      "Bash(python:*)",
+      "Bash(python3:*)",
+      "Bash(uv run:*)",
+      "Bash(uvx:*)",
+      "Bash(ls:*)",
+      "Bash(find:*)",
+      "Bash(grep:*)"
+    ],
+    "deny": [],
+    "ask": [
+      "Bash(rm -rf /)",
+      "Bash(rm -rf /:*)",
+      "Bash(git push --force:*)",
+      "Bash(git push -f:*)",
+      "Bash(git push origin --force:*)",
+      "Bash(git push origin -f:*)",
+      "Bash(git reset --hard:*)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash|Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"${CLAUDE_PROJECT_DIR:-.}\" && uv run .claude/hooks/pre-tool-safety.py",
+            "timeout": 10,
+            "statusMessage": "DSGVO Safety-Check..."
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"${CLAUDE_PROJECT_DIR:-.}\" && uv run .claude/hooks/dsgvo-network-guard.py",
+            "timeout": 10,
+            "statusMessage": "DSGVO Netzwerk-Check..."
+          }
+        ]
+      },
+      {
+        "matcher": "Read",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"${CLAUDE_PROJECT_DIR:-.}\" && uv run .claude/hooks/dsgvo-pii-file-guard.py",
+            "timeout": 10,
+            "statusMessage": "DSGVO PII-Datei-Check..."
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"${CLAUDE_PROJECT_DIR:-.}\" && uv run .claude/hooks/post-write-validate.py",
+            "timeout": 30,
+            "statusMessage": "Validiere Code..."
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"${CLAUDE_PROJECT_DIR:-.}\" && uv run .claude/hooks/dsgvo-output-guard.py",
+            "timeout": 10,
+            "statusMessage": "DSGVO Output-Check..."
+          }
+        ]
+      },
+      {
+        "matcher": "Read",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"${CLAUDE_PROJECT_DIR:-.}\" && uv run .claude/hooks/dsgvo-content-guard.py",
+            "timeout": 10,
+            "statusMessage": "DSGVO Content-Check..."
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"${CLAUDE_PROJECT_DIR:-.}\" && uv run .claude/hooks/dsgvo-prompt-guard.py",
+            "timeout": 10,
+            "statusMessage": "DSGVO Prompt-Check..."
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"${CLAUDE_PROJECT_DIR:-.}\" && uv run .claude/hooks/dsgvo-session-guard.py",
+            "timeout": 10,
+            "statusMessage": "DSGVO Session-Check..."
+          }
+        ]
+      }
+    ]
+  },
+  "enableAllProjectMcpServers": false
+}

@@ -1,0 +1,4 @@
+timestamp	user	action	ip_address	email
+2024-01-15T10:30:00	hans.mueller	LOGIN	192.168.1.100	hans.mueller@example.de
+2024-01-15T10:35:00	anna.schmidt	UPLOAD	192.168.1.101	anna.schmidt@example.com
+2024-01-15T11:00:00	peter.weber	DOWNLOAD	10.0.0.50	peter.weber@mail.de

@@ -1,0 +1,18 @@
+# Synthetic test fixtures, not real secrets. Reviewed 2026-10-16:
+#  - testfiles/{client.pfx,keystore.p12,private.key} contain only a "FAKE_..._FOR_TESTING" marker string
+#  - the API-key-like strings in tests/ are sequential dummies (abcdef..., 1234567890) used to
+#    exercise the scanner's own detection patterns
+# git history mode (commit:file:rule:line)
+ff6b1e56e8ca61c07ec0cbe4ccb77ffeaeac90ba:testfiles/client.pfx:pkcs12-file:0
+ff6b1e56e8ca61c07ec0cbe4ccb77ffeaeac90ba:testfiles/keystore.p12:pkcs12-file:0
+ff6b1e56e8ca61c07ec0cbe4ccb77ffeaeac90ba:testfiles/private.key:private-key:1
+ff6b1e56e8ca61c07ec0cbe4ccb77ffeaeac90ba:tests/test_pii_scanner.py:generic-api-key:195
+ff6b1e56e8ca61c07ec0cbe4ccb77ffeaeac90ba:tests/test_v1_vs_v2_comparison.py:generic-api-key:108
+ff6b1e56e8ca61c07ec0cbe4ccb77ffeaeac90ba:tests/test_v1_vs_v2_comparison.py:generic-api-key:114
+# working tree mode (file:rule:line)
+testfiles/client.pfx:pkcs12-file:0
+testfiles/keystore.p12:pkcs12-file:0
+testfiles/private.key:private-key:1
+tests/test_pii_scanner.py:generic-api-key:195
+tests/test_v1_vs_v2_comparison.py:generic-api-key:112
+tests/test_v1_vs_v2_comparison.py:generic-api-key:118

@@ -1,0 +1,20 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "name": "Erika Mustermann",
+      "email": "erika.mustermann@firma.example",
+      "personalNr": "EX-12345",
+      "geburtsdatum": "15.03.1990",
+      "sozialversicherungsnr": "12A345678B901"
+    },
+    {
+      "id": 2,
+      "name": "Max Beispiel",
+      "email": "max.beispiel@firma.example",
+      "personalNr": "EX-67890",
+      "geburtsdatum": "22.11.1985",
+      "telefon": "+49 171 9876543"
+    }
+  ]
+}

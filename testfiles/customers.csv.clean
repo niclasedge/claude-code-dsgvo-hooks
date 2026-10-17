@@ -1,0 +1,4 @@
+id,vorname,nachname,email,telefon,geburtsdatum,iban,adresse
+1,Anna,Peter,testuser.001@example.test,+49 000 0000001,01.01.2000,DE11 1111 2222 3333 4444 55,"Musterstrasse 1, 10000 Musterstadt"
+2,Erika,Test,testuser.002@example.test,+49 000 0000002,02.02.2001,DE12 1111 2222 3333 4444 56,"Beispielweg 42, 20000 Beispielstadt"
+3,Demo,Probe,testuser.003@example.test,+49 (0)3+49 000 0000003,03.03.2002,DE13 1111 2222 3333 4444 57,"Testgasse 7, 30000 Teststadt"

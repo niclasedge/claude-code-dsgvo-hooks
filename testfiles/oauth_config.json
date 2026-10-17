@@ -1,0 +1,6 @@
+{
+  "client_id": "fake-client-id-for-testing",
+  "client_secret": "fake-secret-for-testing",
+  "token_url": "https://auth.example.com/oauth/token",
+  "scope": "read write"
+}

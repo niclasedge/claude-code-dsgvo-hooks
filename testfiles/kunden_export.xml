@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kundenExport>
+  <kunde id="1">
+    <name>Hans Mueller</name>
+    <email>hans.mueller@example.de</email>
+    <iban>DE89370400440532013000</iban>
+    <geburtsdatum>15.03.1985</geburtsdatum>
+  </kunde>
+  <kunde id="2">
+    <name>Anna Schmidt</name>
+    <email>anna.schmidt@example.com</email>
+    <iban>DE27100777770209299700</iban>
+    <geburtsdatum>22.11.1990</geburtsdatum>
+  </kunde>
+</kundenExport>

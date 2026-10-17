@@ -1,0 +1,58 @@
+{
+  "_kommentar": [
+    "URL-Whitelist fuer den DSGVO Network Guard.",
+    "Nur Domains/URLs in dieser Liste sind fuer Netzwerkzugriffe erlaubt.",
+    "Patterns unterstuetzen Wildcards: *.example.com matcht alle Subdomains.",
+    "Neue Domains koennen jederzeit hinzugefuegt werden.",
+    "Aenderungen werden sofort wirksam (kein Neustart noetig)."
+  ],
+  "version": "1.0",
+  "modus": "whitelist",
+  "erlaubte_domains": [
+    "github.com",
+    "*.github.com",
+    "api.github.com",
+    "raw.githubusercontent.com",
+    "gitlab.com",
+    "*.gitlab.com",
+    "bitbucket.org",
+    "*.bitbucket.org",
+    "pypi.org",
+    "files.pythonhosted.org",
+    "registry.npmjs.org",
+    "registry.yarnpkg.com",
+    "rubygems.org",
+    "crates.io",
+    "pkg.go.dev",
+    "proxy.golang.org",
+    "repo.maven.apache.org",
+    "dl.google.com",
+    "packages.microsoft.com",
+    "download.docker.com",
+    "registry.hub.docker.com",
+    "*.docker.io",
+    "ghcr.io",
+    "huggingface.co",
+    "*.huggingface.co",
+    "cdn-lfs.huggingface.co"
+  ],
+  "erlaubte_urls": [
+    "https://install.python-poetry.org",
+    "https://sh.rustup.rs",
+    "https://get.docker.com"
+  ],
+  "blockierte_domains": [
+    "pastebin.com",
+    "paste.ee",
+    "hastebin.com",
+    "transfer.sh",
+    "file.io",
+    "0x0.st",
+    "*.ngrok.io",
+    "*.serveo.net",
+    "requestbin.com",
+    "webhook.site"
+  ],
+  "log_blockierungen": true,
+  "fail_closed": true
+}
